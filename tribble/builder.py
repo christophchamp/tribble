@@ -234,7 +234,7 @@ def bob_the_builder(client, args, number, queue, fault=0):
         nova.servers.delete(server_id)
 
     kwargs = {
-        'name': '%s_%s' % (args['name'], number),
+        'name': '%s_%s_%s' % (args['name'], args['dc'], number),
         'image': args['imageid'],
         'flavor': args['flavor'],
         'admin_pass': args['server_password']
