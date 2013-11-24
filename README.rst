@@ -28,7 +28,7 @@ To use this application you will need the following:
 
 How to make it all go::
 
-  builder -U <user> -P <apikey> -R ord --image <imageID> --flavor <flavorID> -bn <NumServers> --name <ServerName> build
+  tribble -U <user> -P <apikey> -R ord --image <imageID> --flavor <flavorID> -bn <NumServers> --name <ServerName> build
   
 
 Other Functions:
