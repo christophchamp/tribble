@@ -27,6 +27,7 @@ To use this application you will need the following:
   
 
 How to make it all go::
+
   builder -U <user> -P <apikey> -R ord --image <imageID> --flavor <flavorID> -bn <NumServers> --name <ServerName> build
   
 
@@ -38,3 +39,4 @@ Other Functions:
 
 License :
   This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. See "README/LICENSE.txt" for full disclosure of the license associated with this product. Or goto http://www.gnu.org/licenses/
+
