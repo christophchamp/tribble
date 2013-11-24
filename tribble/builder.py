@@ -23,13 +23,14 @@ from novaclient.v1_1 import client as nova_client
 
 
 POST_ACTION = """
-Done. If everything worked as expected, here is what you have
+Done. If everything worked as expected, Here is what you have
 =============================================================
 
 The was done for account "%(username)s"
 
 Servers  = %(build_number)s
 Password = %(server_password)s
+Region = %(dc)s
 
 run: get-ips for the regions you just built
 """
@@ -167,6 +168,13 @@ class auth_plugin(object):
 
 class rax_creds(object):
     def __init__(self, user, apikey, region):
+        """Set our creds in a Class for use later.
+
+        :param user:
+        :param apikey:
+        :param region:
+        """
+
         self.user = user
         self.apikey = apikey
         self.region = region
@@ -176,6 +184,10 @@ class rax_creds(object):
 
 class Clients(object):
     def __init__(self, creds):
+        """Load our client.
+
+        :param creds:
+        """
         self.creds = creds
         insecure = False
         cacert = None
@@ -191,6 +203,7 @@ class Clients(object):
 
     def novaclient(self):
         """Load the Novaclient."""
+
         self.creds_dict.update({
             'auth_system': self.creds.system,
             'auth_plugin': self.creds.plugin
@@ -203,6 +216,7 @@ class Clients(object):
 
         :param client: str
         """
+
         # Setup our RAX Client
         client_type = getattr(self, client)
         if client_type is None:
@@ -368,6 +382,7 @@ def runner(args, client, region, image):
         queue = basic_queue(iters=range(args['build_number']))
 
         args['imageid'] = image
+        args['dc'] = region
 
         # Prep the threader
         worker_proc(job_action=bob_the_builder,

@@ -11,9 +11,9 @@
 import setuptools
 import sys
 
-from massbuilder import info
+from tribble import info
 
-REQUIRES = ['prettytable>=0.6.0', 'novaclient>=2.15.0.0']
+REQUIRES = ['python-novaclient>=2.15.0.0']
 
 if sys.version_info < (2, 6, 0):
     sys.stderr.write("MassBuilder Presently requires Python 2.6.0 or"
@@ -34,7 +34,7 @@ setuptools.setup(
     description=info.__description__,
     long_description=LDINFO,
     license='GNU General Public License v3 or later (GPLv3+)',
-    packages=['massbuilder'],
+    packages=['tribble'],
     url=info.__url__,
     install_requires=REQUIRES,
     classifiers=[
@@ -50,5 +50,5 @@ setuptools.setup(
         'Topic :: Utilities',
         'Topic :: Software Development :: Libraries :: Python Modules'],
     entry_points={
-        "console_scripts": ["massbuilder = massbuilder.executable:execute"]}
+        "console_scripts": ["tribble = tribble.executable:execute"]}
 )

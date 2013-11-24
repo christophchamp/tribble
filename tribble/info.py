@@ -16,9 +16,9 @@ __license__ = "GPLv3+"
 __date__ = "2013-09-14"
 __version__ = "0.0.1"
 __status__ = "Production"
-__appname__ = "massbuilder"
-__description__ = 'Rackspace Mass Cloud Server Builder'
-__url__ = 'https://github.com/cloudnull/Mass-Build-Application.git'
+__appname__ = "tribble"
+__description__ = 'Rackspace Mass Cloud Server Spawner'
+__url__ = 'https://github.com/cloudnull/tribble.git'
 
 # The Version Of the Application
 __VN__ = '%s' % __version__

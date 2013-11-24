@@ -5,8 +5,11 @@ Mass Build Application
 :category: linux 
 
 
-THIS IS ONLY HERE FOR LEGACY PURPOSES, THIS SET OF SCRIPTS ARE BROKEN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+THIS IS ONLY HERE FOR LEGACY PURPOSES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+THIS SET OF SCRIPTS ARE BROKEN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PLEASE USE THE MAIN REPO
 ~~~~~~~~~~~~~~~~~~~~~~~~

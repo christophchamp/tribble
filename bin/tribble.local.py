@@ -14,9 +14,9 @@ import sys
 
 possible_topdir = os.path.normpath(os.path.join(os.path.abspath(sys.argv[0]),
                                                 os.pardir, os.pardir))
-top_path = os.path.join(possible_topdir, 'massbuilder', '__init__.py')
+top_path = os.path.join(possible_topdir, 'tribble', '__init__.py')
 if os.path.exists(top_path):
     sys.path.insert(0, possible_topdir)
 
-from massbuilder import executable
+from tribble import executable
 executable.execute()

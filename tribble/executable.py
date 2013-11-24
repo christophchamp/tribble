@@ -9,10 +9,11 @@
 # =============================================================================
 import multiprocessing
 
-from massbuilder import builder
+from tribble import builder
 
 
 def execute():
+    """Execute the Tribble Application."""
     user_args = builder.arguments()
     datacenters = user_args['region'].split(',')
     user_args['threads'] /= len(datacenters)
