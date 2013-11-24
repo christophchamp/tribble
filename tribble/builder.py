@@ -254,14 +254,21 @@ def bob_the_builder(client, args, number, queue, fault=0):
         else:
             kwargs['key_name'] = args['key_name']
 
+    instance = None
+    status = None
+
     time.sleep(random.randrange(1, 5))
     while True:
         try:
             instance = client.servers.create(**kwargs)
+            time.sleep(.1)
+            status = instance.status
         except Exception, exc:
             fault += 1
-            print('EXCEPTION in build process: "%s" The application will retry,'
-                  ' Number of faults "%s"' % (exc, fault))
+            if instance is not None:
+                _kill(client, instance.id, number, queue)
+            print('EXCEPTION in build process: "%s" The application will'
+                  ' retry, Number of faults "%s"' % (exc, fault))
             # Retry on Exception
             if fault >= 10:
                 raise SystemExit('Too many fatal error happened while building'
@@ -269,7 +276,6 @@ def bob_the_builder(client, args, number, queue, fault=0):
             else:
                 time.sleep(5)
         else:
-            status = instance.status
             break
 
     tryout = 100
