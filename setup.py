@@ -13,7 +13,7 @@ import sys
 
 from tribble import info
 
-REQUIRES = ['python-novaclient>=2.15.0.89']
+REQUIRES = ['python-novaclient>=2.15.0']
 
 if sys.version_info < (2, 6, 0):
     sys.stderr.write("MassBuilder Presently requires Python 2.6.0 or"
