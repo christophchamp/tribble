@@ -359,16 +359,19 @@ def job_check(args, client, tries=0):
     all_servers = client_list(client)
     if all_servers:
         server_count = len(all_servers)
-
-        if server_count > args['number']:
-            diff = server_count - args['number']
-            print('Too many severs found, we should have "%s"'
-                  ' but we have "%s" The system will now normalize.'
-                  % (args['number'], server_count))
-            servers_ids = [server.id for server in client_list(client)
-                           if server.name.startswith(args['name'])]
-            for server_id in servers_ids[:diff]:
-                client_delete(client, server_id=server_id)
+        #
+        # Commenting out this section since we don't want it to
+        # nuke our new servers.
+        #
+        #if server_count > args['number']:
+        #    diff = server_count - args['number']
+        #    print('Too many severs found, we should have "%s"'
+        #          ' but we have "%s" The system will now normalize.'
+        #          % (args['number'], server_count))
+        #    servers_ids = [server.id for server in client_list(client)
+        #                   if server.name.startswith(args['name'])]
+        #    for server_id in servers_ids[:diff]:
+        #        client_delete(client, server_id=server_id)
     else:
         if tries > MAX_FAULTS:
             raise SystemExit('The system had too many failures, while'
